@@ -8,3 +8,4 @@ CharacterBoxColor = "#873260" # Background where character image is
 DialogBoxColor = "#353839" # Background where character words are
 AccentColor = "#5F2644" # Borders and details
 DefaultTextColor = "#ffffff"
+BorderWidth = "1.0" # Without Border = "0.0", use float numbers and these: ""

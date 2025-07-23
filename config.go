@@ -1,9 +1,13 @@
 package main
 
 type Config struct {
-	Title  string
-	Color1 string
-	Color2 string
+	Title             string
+	OuterBoxColor     string
+	MainBoxColor      string
+	CharacterBoxColor string
+	DialogBoxColor    string
+	DefaultTextColor  string
+	BorderWidth       string
 }
 
 func (c *Config) Load() {
