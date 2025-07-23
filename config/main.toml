@@ -1,2 +1,10 @@
-Color1 = "blue"
-Color2 = "black"
+# Use UpperCamelCase notation in left side (capitalize first letter of words)
+# Don't forget it => ""
+
+Title = "My Awesome Visual-Fanfic"
+OuterBoxColor = "#1A1A1D" # Extra background for bigger screens
+MainBoxColor = "#c3c3c5ff" # Background color
+CharacterBoxColor = "#873260" # Background where character image is
+DialogBoxColor = "#353839" # Background where character words are
+AccentColor = "#5F2644" # Borders and details
+DefaultTextColor = "#ffffff"

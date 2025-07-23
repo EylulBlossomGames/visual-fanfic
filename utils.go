@@ -22,8 +22,8 @@ func CreatePath(pathParts []string) (finalPath string) {
 	return finalPath
 }
 
-// Takes path to TOML file and struct pointer
-// and fill the struct and returns it
+// Takes a path to TOML file and a data struct
+// and fill the struct with TOML content
 func ParseToml(pathParts []string, data interface{}) toml.MetaData {
 	tomlPath := CreatePath(pathParts)
 
@@ -37,5 +37,9 @@ func ParseToml(pathParts []string, data interface{}) toml.MetaData {
 		log.Fatalf("Error decoding TOML file: %v", err)
 	}
 
+	// You can ignore this value, but is a "must-be" or it does not compile
+	// Assuming the variable ms is (ms *MyStruct) a pointer
+	// Right: ParseToml([]string{"myfolder", "example.toml"}, ms)
+	// Wrong: _ := ParseToml([]string{"myfolder", "example.toml"}, ms)
 	return metadata
 }

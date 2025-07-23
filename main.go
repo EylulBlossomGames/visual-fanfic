@@ -37,6 +37,9 @@ func main() {
 
 	///testing...
 	config := Config{}
-	config.Read()
+	config.Load()
+
+	characters := Characters{}
+	characters.Load()
 
 }

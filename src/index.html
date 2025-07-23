@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/lib/normalize.css">
+    <link rel="stylesheet" href="./assets/css/lib/normalize.css">
+    {{ .Css }}
+    <link rel="stylesheet" href="./assets/css/user.css">
     <title>{{.Title}}</title>
 </head>
 <body>
-    {{.Content}}
+    <div class="container">
+        <header>{{.Title}}</header>
+        <main>{{.Content}}</main>
+    </div>
+    <script src="./assets/js/user.js"></script>
 </body>
 </html>
