@@ -20,7 +20,7 @@ type Capitals struct {
 func TestCreatePath(t *testing.T) {
 	thisDir, err := os.Getwd()
 	if err != nil {
-		log.Fatalf("Error accesing to filesystem: %v", err)
+		log.Fatalf("Error accessing to filesystem: %v", err)
 	}
 
 	myPath := filepath.Join(thisDir, "pablo", "documents", "doc1.txt")

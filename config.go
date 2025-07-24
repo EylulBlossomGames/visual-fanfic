@@ -1,7 +1,10 @@
 package main
 
+import "sync"
+
 type Config struct {
 	Title             string
+	LogoSrc           string
 	OuterBoxColor     string
 	MainBoxColor      string
 	CharacterBoxColor string
@@ -10,6 +13,8 @@ type Config struct {
 	BorderWidth       string
 }
 
-func (c *Config) Load() {
+func (c *Config) Load(wg *sync.WaitGroup) {
+	defer wg.Done()
+
 	ParseToml([]string{"config", "main.toml"}, c)
 }

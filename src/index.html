@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Libraries -->
     <link rel="stylesheet" href="./assets/css/lib/normalize.css">
     <link rel="stylesheet" href="./assets/css/lib/skeleton.css">
+    <!-- End of libraries -->
     {{ .Css }}
     <link rel="stylesheet" href="./assets/css/user.css">
     <title>{{.Title}}</title>
 </head>
-<body>
-    <div class="container">
-        <header>{{.Title}}</header>
+<body class="outer-box">
+    <div class="main-box container">
+        <header>
+            <div class="header-icon-box">
+                <img src="{{ .LogoSrc  }}" alt="Site logo">
+            </div>
+            <div class="header-title-box"><h1>{{.Title}}</h1></div>
+        </header>
         <main>{{.Content}}</main>
     </div>
     <script src="./assets/js/user.js"></script>
