@@ -8,19 +8,97 @@
     <link rel="stylesheet" href="./assets/css/lib/normalize.css">
     <link rel="stylesheet" href="./assets/css/lib/skeleton.css">
     
-    
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+     <style>
+        img {
+            max-width: 100%;
+        }
+
+        .outer-box {
+            background-color: #1A1A1D;
+            color: #ffffff;
+        }
+
+        .main-box {
+            background-color: #280131;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: #873260;
+            color: #ffffff;
+        }
+
+        .header-icon-box, .header-title-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-title-box {
+            flex-direction: column;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+        }
+
+        .d-line {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .character-box, .dialog-box {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .character-box {
+            background-color: #873260;
+        }
+
+        .dialog-box {
+            background-color: #353839;
+        }
+
+        .footer-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #873260;
+            color: #ffffff;
+        }
+     </style>
     <link rel="stylesheet" href="./assets/css/user.css">
-    <title>My Awesome Visual-Fanfic</title>
+    <title>My Awesome Visual Fanfic</title>
 </head>
-<body class="outer-box">
+<body class="outer-box poppins-regular">
     <div class="main-box container">
-        <header>
+        <header class="header row">
             <div class="header-icon-box">
                 <img src="./assets/img/logo.png" alt="Site logo">
             </div>
-            <div class="header-title-box"><h1>My Awesome Visual-Fanfic</h1></div>
+            <div class="header-title-box">
+                <h1 class="poppins-black">My Awesome Visual Fanfic</h1>
+                <h3 class="poppins-italic">John Doe</h3>
+            </div>
         </header>
-        <main></main>
+        <main class="content-box"><div class='d-line container'><div class='character-box one-third column'><img src='' alt='__narrator'></div><div class='dialog-box two-thirds column'><p>The night is very dark, like a poisonous snake with malicious intentions, waiting the most hidden place to attack.</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='chris'></div><div class='dialog-box two-thirds column'><p>...</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='exphantom_happy'></div><div class='dialog-box two-thirds column'><p>Oh! Shy persons always buy much, and you look like a silence lover. Do you want my hat? Do you want my car? Do you want a spaceship? Say it and you will get... If you don't speak, I will assume that you want to buy.</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='chris'></div><div class='dialog-box two-thirds column'><p>...</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='exphantom_happy'></div><div class='dialog-box two-thirds column'><p>No money? It's more difficult that I thought... Ha! I can sell you my money-maker machine, an exceptionally advanced technology, but don't say it to Larry, the cop.</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='chris'></div><div class='dialog-box two-thirds column'><p>... ... ...</p></div></div><div class='d-line container'><div class='character-box one-third column'><img src='' alt='exphantom_happy'></div><div class='dialog-box two-thirds column'><p>Oh, yes! Give a try! You will pay tomorrow.</p></div></div></main>
+        <footer class="footer-box">By John Doe © 2025</footer>
     </div>
     <script src="./assets/js/user.js"></script>
 </body>

@@ -1,8 +1,8 @@
 package main
 
+import "html/template"
+
 type Page struct {
-	Title   string
-	Content string
-	Css     string
-	LogoSrc string
+	Config  Config
+	Content template.HTML
 }

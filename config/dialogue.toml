@@ -1,0 +1,34 @@
+# Styles are configured in characters.toml
+# Cn = CodeName
+# RECOMMENDATIONS:
+# -Copy and paste
+# -You can have many narrators with prefixed codenames '__' for styles (__narrator, __narrator_bold, __scene_change)
+# -You can use many of same character changing slightly their codenames (cat, cat_shouting, cat_angry)
+
+[[DialogueLines]]
+Cn = "__narrator"
+Text = "The night is very dark, like a poisonous snake with malicious intentions, waiting the most hidden place to attack."
+
+[[DialogueLines]]
+Cn = "chris"
+Text = "..."
+
+[[DialogueLines]]
+Cn = "exphantom_happy"
+Text = "Oh! Shy persons always buy much, and you look like a silence lover. Do you want my hat? Do you want my car? Do you want a spaceship? Say it and you will get... If you don't speak, I will assume that you want to buy."
+
+[[DialogueLines]]
+Cn = "chris"
+Text = "..."
+
+[[DialogueLines]]
+Cn = "exphantom_happy"
+Text = "No money? It's more difficult that I thought... Ha! I can sell you my money-maker machine, an exceptionally advanced technology, but don't say it to Larry, the cop."
+
+[[DialogueLines]]
+Cn = "chris"
+Text = "... ... ..."
+
+[[DialogueLines]]
+Cn = "exphantom_happy"
+Text = "Oh, yes! Give a try! You will pay tomorrow."

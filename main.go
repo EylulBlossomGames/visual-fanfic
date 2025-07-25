@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 )
 
@@ -37,11 +39,38 @@ func main() {
 	wg.Add(1)
 	go config.Load(&wg)
 
-	characters := Characters{}
+	cast := Cast{}
 	wg.Add(1)
-	go characters.Load(&wg)
+	go cast.Load(&wg)
+
+	dialogue := Dialogue{}
+	wg.Add(1)
+	go dialogue.Load(&wg)
 
 	wg.Wait()
+
+	// Creating dialogue boxes
+	contentBlocks := []string{}
+
+	for _, dl := range dialogue.DialogueLines {
+		imgSrc := ""
+		imgAlt := dl.Cn
+		textLine := dl.Text
+
+		dlCode := fmt.Sprintf(
+			"<div class='d-line container'>"+
+				"<div class='character-box one-third column'><img src='%s' alt='%s'></div>"+
+				"<div class='dialog-box two-thirds column'><p>%s</p></div>"+
+				"</div>",
+			imgSrc,
+			imgAlt,
+			textLine,
+		)
+
+		contentBlocks = append(contentBlocks, dlCode)
+	}
+
+	content := template.HTML(strings.Join(contentBlocks, ""))
 
 	// Output HTML document, containing all of data
 	outputHtml := filepath.Join(outputPath, "index.html")
@@ -53,10 +82,8 @@ func main() {
 	// Data struct in file: 'page.go'
 	// These properties are same in template: 'src/index.html'
 	myData := Page{
-		Title:   config.Title,
-		Content: "",
-		Css:     "",
-		LogoSrc: config.LogoSrc,
+		Config:  config,
+		Content: content,
 	}
 
 	tmpl.ExecuteTemplate(file, "index.html", myData)

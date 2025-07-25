@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="favicon.svg"
+   sodipodi:docname="logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.5"
-     inkscape:cx="280"
+     inkscape:cx="279"
      inkscape:cy="496"
      inkscape:window-width="1192"
      inkscape:window-height="702"
@@ -41,9 +41,9 @@
      id="layer1">
     <g
        id="g3"
-       inkscape:export-filename="favicon.png"
-       inkscape:export-xdpi="3.175"
-       inkscape:export-ydpi="3.175">
+       inkscape:export-filename="logo.png"
+       inkscape:export-xdpi="31.75"
+       inkscape:export-ydpi="31.75">
       <rect
          style="fill:#d35f5f;stroke-width:0.509323;fill-opacity:1"
          id="rect1"

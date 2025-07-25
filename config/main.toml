@@ -1,12 +1,24 @@
 # Use UpperCamelCase notation in left side (capitalize first letter of words)
 # Don't forget it => ""
 
-Title = "My Awesome Visual-Fanfic"
+
+Title = "My Awesome Visual Fanfic"
+Author = "John Doe"
+FooterText = "By John Doe © 2025"
+FooterBoxColor = "#873260"
+FooterFontColor = "#ffffff"
+HeaderColor = "#873260"
+HeaderFontColor = "#ffffff"
+TitleFont = "./assets/fonts/Poppins/Poppins-Black.ttf"
+ContentFont = "./assets/fonts/Poppins/Poppins-Regular.ttf"
 LogoSrc = "./assets/img/logo.png" # Your header icon, aside your page name
 OuterBoxColor = "#1A1A1D" # Extra background for bigger screens
-MainBoxColor = "#c3c3c5ff" # Background color
+MainBoxColor = "#280131" # Background color
 CharacterBoxColor = "#873260" # Background where character image is
 DialogBoxColor = "#353839" # Background where character words are
 AccentColor = "#5F2644" # Borders and details
 DefaultTextColor = "#ffffff"
 BorderWidth = "1.0" # Without Border = "0.0", use float numbers and these: ""
+
+
+

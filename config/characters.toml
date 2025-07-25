@@ -5,11 +5,28 @@
 # Use all of images in same size, you can cut your images for it
 
 [[Characters]]
+CodeName = "__narrator" # With 2 underlashes '__' in front means "Only text Box"
+VisibleName = "" 
+Image = ""
+TextStyle = "i" # n/b/i/bi/ib (normal/bold/italic/bold+italic), "" is "n" too
+TextColor = "" # Void string applies default color (DefaultTextColor in main.toml)
+CharacterBoxColor = ""
+DialogBoxColor = ""
+
+[[Characters]]
 CodeName = "chris" # You can use chris_happy and chris_sad, for example
 VisibleName = "Chris" # Both are the same Chris, then you want to show "Chris"
 Image = "chris.png"
+TextStyle = "n"
+TextColor = ""
+CharacterBoxColor = ""
+DialogBoxColor = ""
 
 [[Characters]]
 CodeName = "exphantom_happy"
 VisibleName = "Ex Phantom"
 Image = "exphantom_happy.png"
+TextStyle = "n"
+TextColor = ""
+CharacterBoxColor = ""
+DialogBoxColor = ""

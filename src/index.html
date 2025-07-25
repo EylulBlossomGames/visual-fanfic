@@ -8,19 +8,97 @@
     <link rel="stylesheet" href="./assets/css/lib/normalize.css">
     <link rel="stylesheet" href="./assets/css/lib/skeleton.css">
     <!-- End of libraries -->
-    {{ .Css }}
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+     <style>
+        img {
+            max-width: 100%;
+        }
+
+        .outer-box {
+            background-color: {{.Config.OuterBoxColor}};
+            color: {{.Config.DefaultTextColor}};
+        }
+
+        .main-box {
+            background-color: {{.Config.MainBoxColor}};
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: {{.Config.HeaderColor}};
+            color: {{.Config.HeaderFontColor}};
+        }
+
+        .header-icon-box, .header-title-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-title-box {
+            flex-direction: column;
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+        }
+
+        .d-line {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .character-box, .dialog-box {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .character-box {
+            background-color: {{.Config.CharacterBoxColor}};
+        }
+
+        .dialog-box {
+            background-color: {{.Config.DialogBoxColor}};
+        }
+
+        .footer-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: {{.Config.FooterBoxColor}};
+            color: {{.Config.FooterFontColor}};
+        }
+     </style>
     <link rel="stylesheet" href="./assets/css/user.css">
-    <title>{{.Title}}</title>
+    <title>{{.Config.Title}}</title>
 </head>
-<body class="outer-box">
+<body class="outer-box poppins-regular">
     <div class="main-box container">
-        <header>
+        <header class="header row">
             <div class="header-icon-box">
-                <img src="{{ .LogoSrc  }}" alt="Site logo">
+                <img src="{{ .Config.LogoSrc  }}" alt="Site logo">
             </div>
-            <div class="header-title-box"><h1>{{.Title}}</h1></div>
+            <div class="header-title-box">
+                <h1 class="poppins-black">{{.Config.Title}}</h1>
+                <h3 class="poppins-italic">{{.Config.Author}}</h3>
+            </div>
         </header>
-        <main>{{.Content}}</main>
+        <main class="content-box">{{.Content}}</main>
+        <footer class="footer-box">{{.Config.FooterText}}</footer>
     </div>
     <script src="./assets/js/user.js"></script>
 </body>
