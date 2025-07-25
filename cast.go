@@ -10,6 +10,7 @@ type Character struct {
 	TextColor         string
 	CharacterBoxColor string
 	DialogBoxColor    string
+	NameColor         string
 }
 
 type Cast struct {

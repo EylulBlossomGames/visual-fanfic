@@ -12,6 +12,7 @@ TextStyle = "i" # n/b/i/bi/ib (normal/bold/italic/bold+italic), "" is "n" too
 TextColor = "" # Void string applies default color (DefaultTextColor in main.toml)
 CharacterBoxColor = ""
 DialogBoxColor = ""
+NameColor = ""
 
 [[Characters]]
 CodeName = "chris" # You can use chris_happy and chris_sad, for example
@@ -21,6 +22,7 @@ TextStyle = "n"
 TextColor = ""
 CharacterBoxColor = ""
 DialogBoxColor = ""
+NameColor = "royalblue"
 
 [[Characters]]
 CodeName = "exphantom_happy"
@@ -30,3 +32,4 @@ TextStyle = "n"
 TextColor = ""
 CharacterBoxColor = ""
 DialogBoxColor = ""
+NameColor = "crimson"

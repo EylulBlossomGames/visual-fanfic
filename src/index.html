@@ -77,6 +77,16 @@
             visibility: hidden;
         }
 
+        .narrator-character-name-box {
+            display: none;
+        }
+
+        .character-name-box {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
         .footer-box {
             display: flex;
             align-items: center;
@@ -87,6 +97,7 @@
             color: {{.Config.FooterFontColor}};
         }
      </style>
+     <style>{{.CastCss}}</style>
     <link rel="stylesheet" href="./assets/css/user.css">
     <title>{{.Config.Title}}</title>
 </head>

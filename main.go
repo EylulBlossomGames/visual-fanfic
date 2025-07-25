@@ -49,7 +49,9 @@ func main() {
 
 	wg.Wait()
 
-	content := CreateDialogueBoxes(dialogue.DialogueLines)
+	// Content boxes and their styles
+	content := CreateDialogueBoxes(&dialogue.DialogueLines, &cast.Characters)
+	castCss := CreateCssForCharacters(&cast.Characters)
 
 	// Output HTML document, containing all of data
 	outputHtml := filepath.Join(outputPath, "index.html")
@@ -63,34 +65,47 @@ func main() {
 	myData := Page{
 		Config:  config,
 		Content: content,
+		CastCss: castCss,
 	}
 
 	tmpl.ExecuteTemplate(file, "index.html", myData)
 
 }
 
-func CreateDialogueBoxes(dialogueLines []DialogueLine) template.HTML {
+func CreateDialogueBoxes(dialogueLines *[]DialogueLine, characterList *[]Character) template.HTML {
 	// Creating dialogue boxes
 	contentBlocks := []string{}
 
-	for _, dl := range dialogueLines {
+	chVisibleNames := make(map[string]string)
+	for _, character := range *characterList {
+		chVisibleNames[character.CodeName] = character.VisibleName
+	}
+
+	for _, dl := range *dialogueLines {
 		imgSrc := ""
 		imgAlt := dl.Cn
 		textLine := dl.Text
 
 		narratorClass := ""
+		narratorChBoxClass := ""
 		if strings.HasPrefix(dl.Cn, "__") {
 			narratorClass = "narrator-box"
+			narratorChBoxClass = "narrator-character-name-box"
 		}
 
+		visibleName := chVisibleNames[dl.Cn]
+
 		dlCode := fmt.Sprintf(
-			"<div class='d-line container'>"+
+			"<div class='d-line container character-%s'>"+
 				"<div class='character-box one-third column %s'><img src='%s' alt='%s'></div>"+
-				"<div class='dialog-box two-thirds column'><p>%s</p></div>"+
+				"<div class='dialog-box two-thirds column'><h5 class='character-name-box %s'>%s:</h5><p>%s</p></div>"+
 				"</div>",
+			dl.Cn,
 			narratorClass,
 			imgSrc,
 			imgAlt,
+			narratorChBoxClass,
+			visibleName,
 			textLine,
 		)
 
@@ -100,4 +115,65 @@ func CreateDialogueBoxes(dialogueLines []DialogueLine) template.HTML {
 	content := template.HTML(strings.Join(contentBlocks, ""))
 
 	return content
+}
+
+func CreateCssForCharacters(characterList *[]Character) template.CSS {
+	cssBlocks := []string{}
+
+	for _, character := range *characterList {
+		fontStyle := ""
+		if character.TextStyle == "i" {
+			fontStyle = "font-style: italic;"
+		} else if character.TextStyle == "b" {
+			fontStyle = "font-weight: bold;"
+		} else if character.TextStyle == "bi" || character.TextStyle == "ib" {
+			fontStyle = "font-weight: bold;font-style: italic;"
+		}
+
+		txtColor := ""
+		if character.TextColor != "" {
+			txtColor = fmt.Sprintf("color: %s;", character.TextColor)
+		}
+
+		characterBoxColor := ""
+		if character.CharacterBoxColor != "" {
+			characterBoxColor = fmt.Sprintf("background-color: %s;", character.CharacterBoxColor)
+		}
+
+		dialogBoxColor := ""
+		if character.DialogBoxColor != "" {
+			dialogBoxColor = fmt.Sprintf("background-color: %s;", character.DialogBoxColor)
+		}
+
+		nameColor := ""
+		if character.NameColor != "" {
+			nameColor = fmt.Sprintf("color: %s;", character.NameColor)
+		}
+
+		allStyles := strings.Join([]string{
+			fontStyle,
+			txtColor,
+		}, "")
+
+		characterClassname := fmt.Sprintf(".character-%s", character.CodeName)
+
+		cssPiece := fmt.Sprintf(
+			"%s { %s }\n"+
+				"%s .character-box { %s }\n"+
+				"%s .dialog-box { %s }\n"+
+				"%s .character-name-box { %s }\n\n",
+			characterClassname,
+			allStyles,
+			characterClassname,
+			characterBoxColor,
+			characterClassname,
+			dialogBoxColor,
+			characterClassname,
+			nameColor,
+		)
+
+		cssBlocks = append(cssBlocks, cssPiece)
+	}
+
+	return template.CSS(strings.Join(cssBlocks, ""))
 }
