@@ -49,10 +49,31 @@ func main() {
 
 	wg.Wait()
 
+	content := CreateDialogueBoxes(dialogue.DialogueLines)
+
+	// Output HTML document, containing all of data
+	outputHtml := filepath.Join(outputPath, "index.html")
+	file, err := os.Create(outputHtml)
+	if err != nil {
+		log.Fatalf("Error creating output files: %v", err)
+	}
+
+	// Data struct in file: 'page.go'
+	// These properties are same in template: 'src/index.html'
+	myData := Page{
+		Config:  config,
+		Content: content,
+	}
+
+	tmpl.ExecuteTemplate(file, "index.html", myData)
+
+}
+
+func CreateDialogueBoxes(dialogueLines []DialogueLine) template.HTML {
 	// Creating dialogue boxes
 	contentBlocks := []string{}
 
-	for _, dl := range dialogue.DialogueLines {
+	for _, dl := range dialogueLines {
 		imgSrc := ""
 		imgAlt := dl.Cn
 		textLine := dl.Text
@@ -78,20 +99,5 @@ func main() {
 
 	content := template.HTML(strings.Join(contentBlocks, ""))
 
-	// Output HTML document, containing all of data
-	outputHtml := filepath.Join(outputPath, "index.html")
-	file, err := os.Create(outputHtml)
-	if err != nil {
-		log.Fatalf("Error creating output files: %v", err)
-	}
-
-	// Data struct in file: 'page.go'
-	// These properties are same in template: 'src/index.html'
-	myData := Page{
-		Config:  config,
-		Content: content,
-	}
-
-	tmpl.ExecuteTemplate(file, "index.html", myData)
-
+	return content
 }
