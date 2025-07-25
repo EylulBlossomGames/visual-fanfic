@@ -57,11 +57,17 @@ func main() {
 		imgAlt := dl.Cn
 		textLine := dl.Text
 
+		narratorClass := ""
+		if strings.HasPrefix(dl.Cn, "__") {
+			narratorClass = "narrator-box"
+		}
+
 		dlCode := fmt.Sprintf(
 			"<div class='d-line container'>"+
-				"<div class='character-box one-third column'><img src='%s' alt='%s'></div>"+
+				"<div class='character-box one-third column %s'><img src='%s' alt='%s'></div>"+
 				"<div class='dialog-box two-thirds column'><p>%s</p></div>"+
 				"</div>",
+			narratorClass,
 			imgSrc,
 			imgAlt,
 			textLine,
