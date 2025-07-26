@@ -77,12 +77,16 @@ func CreateDialogueBoxes(dialogueLines *[]DialogueLine, characterList *[]Charact
 	contentBlocks := []string{}
 
 	chVisibleNames := make(map[string]string)
+	imgSources := make(map[string]string)
+
 	for _, character := range *characterList {
 		chVisibleNames[character.CodeName] = character.VisibleName
+		imgSources[character.CodeName] = fmt.Sprintf("./assets/img/%s", character.Image)
+
 	}
 
 	for _, dl := range *dialogueLines {
-		imgSrc := ""
+		imgSrc := imgSources[dl.Cn]
 		imgAlt := dl.Cn
 		textLine := dl.Text
 
