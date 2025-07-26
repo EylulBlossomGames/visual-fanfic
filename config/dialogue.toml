@@ -30,5 +30,5 @@ Cn = "chris"
 Text = "... ... ..."
 
 [[DialogueLines]]
-Cn = "exphantom_happy"
-Text = "Oh, yes! Give a try! You will pay tomorrow."
+Cn = "exphantom_malicious"
+Text = "Oh, yes! Give a try! Rest assured, you will pay tomorrow."
