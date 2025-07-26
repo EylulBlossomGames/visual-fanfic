@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.62992818"
-     inkscape:cx="497.67578"
-     inkscape:cy="831.84086"
+     inkscape:cx="520.69428"
+     inkscape:cy="947.72709"
      inkscape:window-width="1192"
      inkscape:window-height="702"
      inkscape:window-x="50"
@@ -377,7 +377,7 @@
        x="76.970421"
        y="186.74203"
        inkscape:label="bg"
-       inkscape:export-filename="/home/debbie/exphantom.png"
+       inkscape:export-filename="exphantom_devil.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <g
@@ -467,11 +467,6 @@
          d="m 116.86216,136.21962 h 33.61287 l -6.11105,12.34759 h -21.39077 z"
          sodipodi:nodetypes="ccccc"
          inkscape:label="mouth-black" />
-      <path
-         id="path16-2"
-         style="display:inline;fill:#ffffff;stroke-width:0.588188"
-         d="m 116.86233,136.21983 3.02448,6.11104 h 27.56356 l 3.0245,-6.11104 z"
-         inkscape:label="mouth-teeth" />
       <circle
          style="display:inline;fill:#ff0000;stroke-width:0.588188"
          id="circle16-6"
@@ -479,6 +474,12 @@
          cy="133.7695"
          r="5.1391068"
          inkscape:label="blush-right" />
+      <path
+         id="path16-2"
+         style="display:inline;fill:#ffffff;stroke-width:0.588188"
+         d="m 116.86233,136.21983 3.02448,6.11104 h 27.56356 l 3.0245,-6.11104 1.57296,-4.0095 -3.7125,4.0095 z"
+         inkscape:label="mouth-teeth"
+         sodipodi:nodetypes="ccccccc" />
       <circle
          style="display:inline;fill:#ff0000;stroke-width:0.588188"
          id="circle17-1"
