@@ -23,27 +23,27 @@
     src: url("../fonts/Poppins/Poppins-Black.ttf");
 }
 
-.poppins-regular {
+.text-regular {
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
 
-.poppins-bold {
+.text-bold {
     font-family: "Poppins-Bold", sans-serif;
     font-style: normal;
 }
 
-.poppins-italic {
+.text-italic {
     font-family: "Poppins-Italic", sans-serif;
     font-style: normal;
 }
 
-.poppins-bold-italic {
+.text-bold-italic {
     font-family: "Poppins-BoldItalic", sans-serif;
     font-style: normal;
 }
 
-.poppins-black {
+.text-black {
     font-family: "Poppins-Black", sans-serif;
     font-style: normal;
 }

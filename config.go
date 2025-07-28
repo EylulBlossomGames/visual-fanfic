@@ -19,6 +19,11 @@ type Config struct {
 	DialogBoxColor    string
 	DefaultTextColor  string
 	BorderWidth       string
+	AccentColor       string
+	AboutMeTitle      string
+	AboutMeBody       string
+	ContactMeTitle    string
+	SocialMedia       map[string]string
 }
 
 func (c *Config) Load(wg *sync.WaitGroup) {

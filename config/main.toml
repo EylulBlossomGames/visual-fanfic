@@ -16,9 +16,18 @@ OuterBoxColor = "#1A1A1D" # Extra background for bigger screens
 MainBoxColor = "#280131" # Background color
 CharacterBoxColor = "#873260" # Background where character image is
 DialogBoxColor = "#353839" # Background where character words are
-AccentColor = "#5F2644" # Borders and details
+AccentColor = "rebeccapurple" # Borders and details
 DefaultTextColor = "#ffffff"
-BorderWidth = "1.0" # Without Border = "0.0", use float numbers and these: ""
+BorderWidth = "0px" # Examples: "1px", "4px", "5px"... No Border = "0px"
 
+AboutMeTitle = "About John Doe"
+AboutMeBody = "A guy really good in sports. I take saxofon classes in friday and I'm the number one fan of Celta Dune."
+ContactMeTitle = "Contact John Doe"
+# Your contact Data
+[SocialMedia]
+mastodon = "@a_very_fake_account@mastodon.social"
+signal = "+54911xxxxxxxx"
+telegram = "@a_very_fake_account_tg"
+discord = "a_very_fake_account#1234"
 
 

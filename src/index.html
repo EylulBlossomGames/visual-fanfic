@@ -20,9 +20,14 @@
         }
 
         .main-box {
+            min-width: 100%;
+            min-width: 100%;
+            margin: 0;
+            padding: 0;
             background-color: {{.Config.MainBoxColor}};
         }
 
+        /* HEADER */
         .header {
             display: flex;
             align-items: center;
@@ -44,8 +49,12 @@
             flex-direction: column;
         }
 
+        
+        /* CONTENT */
         .content-box {
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
             margin: 1rem 0;
         }
@@ -70,7 +79,6 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            margin-bottom: 2rem;
             padding: 1rem;
             height: 100%;
             background-color: {{.Config.CharacterBoxColor}};
@@ -94,33 +102,167 @@
             margin-bottom: 0.5rem;
         }
 
+        .d-line {
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem 0;
+        }
+
+        @media screen and (min-width: 550px) {
+            .d-line {
+                flex-direction: row;
+                margin: 0;
+            }
+
+            .character-box {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Accent Color */
+        .character-box, .footer-box, .header {
+            border: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+        }
+
+        .d-line .dialog-box {
+            border: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+        }
+
+        @media screen and (min-width: 550px) {
+            .d-line .dialog-box {
+                border: none;
+            }
+            .d-line .dialog-box {
+                border-left: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+                border-right: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+            }
+            .d-line:last-child .dialog-box {
+                border-bottom: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+            }
+            .d-line:first-child .dialog-box {
+                border-top: {{ .Config.BorderWidth }} double {{ .Config.AccentColor }};
+            }
+        }
+
+
+        /* FOOTER */
         .footer-box {
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             margin-bottom: 2rem;
             padding: 1.5rem;
             background-color: {{.Config.FooterBoxColor}};
             color: {{.Config.FooterFontColor}};
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+
+        .author-text {
+            text-align: center;
+        }
+
+        .contact-box, .about-me-box {
+            margin: 2rem 0;
+        }
+
+        .contact-heading, .about-me-heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-title {
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-media, .platform, .user {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        .platform {
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .user {
+            text-align: center;
+            overflow-wrap: break-word;
+        }
+
+        .social-media {
+            display: flex;
+            flex-direction:column;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        @media screen and (min-width: 550px) {
+            .social-media {
+                flex-direction: row;
+            }
+
+            .platform {
+                text-align: right;
+            }
+
+            .user {
+                text-align: left;
+            }
         }
      </style>
      <style>{{.CastCss}}</style>
     <link rel="stylesheet" href="./assets/css/user.css">
     <title>{{.Config.Title}}</title>
 </head>
-<body class="outer-box poppins-regular">
+<body class="outer-box text-regular">
     <div class="main-box container">
         <header class="header row">
             <div class="header-icon-box">
                 <img src="{{ .Config.LogoSrc  }}" alt="Site logo">
             </div>
             <div class="header-title-box">
-                <h1 class="poppins-black">{{.Config.Title}}</h1>
-                <h3 class="poppins-italic">{{.Config.Author}}</h3>
+                <h1 class="text-black">{{.Config.Title}}</h1>
+                <h3 class="text-italic">{{.Config.Author}}</h3>
             </div>
         </header>
         <main class="content-box">{{.Content}}</main>
-        <footer class="footer-box">{{.Config.FooterText}}</footer>
+        <footer class="footer-box">
+            <div class="about-me-box container">
+                <div class="about-me-heading"><h3 class="about-me-title">{{ .Config.AboutMeTitle }}</h3></div>
+                <div class="about-me-content"><p class="about-me-body">{{ .Config.AboutMeBody }}</p></div>
+            </div>
+            <div class="contact-box container">
+                <div class="contact-heading"><h3 class="contact-title">{{ .Config.ContactMeTitle }}</h3></div>
+                {{ range $platform, $user := .Config.SocialMedia }}
+                    <div class="social-media container">
+                        <div class="platform one-third column text-bold">{{ $platform }}:</div>
+                        <div class="user two-thirds column">{{ $user }}</div>
+                    </div>
+                {{ end }}
+            </div>
+            <div class="author-box container">
+                <h6 class="author-text"><small>{{.Config.FooterText}}</small></h6>
+            </div>
+        </footer>
     </div>
     <script src="./assets/js/user.js"></script>
 </body>
