@@ -254,8 +254,8 @@
                 <div class="contact-heading"><h3 class="contact-title">{{ .Config.ContactMeTitle }}</h3></div>
                 {{ range $platform, $user := .Config.SocialMedia }}
                     <div class="social-media container">
-                        <div class="platform one-third column text-bold">{{ $platform }}:</div>
-                        <div class="user two-thirds column">{{ $user }}</div>
+                        <div class="platform one-half column text-bold">{{ $platform }}:</div>
+                        <div class="user one-half column">{{ $user }}</div>
                     </div>
                 {{ end }}
             </div>
