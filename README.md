@@ -124,7 +124,7 @@ In *fonts.css* (and some properties in *main.toml*), you can configure the font 
 
 There are two files, *user.css* and *user.js* for advanced users. They can modify all of desired from here (these files are applied in last place).
 
-## Comments to help you
+### Comments to help you
 
 Useful comments in TOML files.
 
