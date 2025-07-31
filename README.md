@@ -6,6 +6,22 @@ Visual Fanfic is with the fans. We support your efforts and devotion for the Gam
 
 It looks nice to give you some form to obtain more power in expresivity to show your love for the great works to the world.
 
+## Screenshots
+
+**Styles are highly customizable!**
+
+> Nine pictures are worth nine thousand words.
+
+![Captura de pantalla de la app.](screenshots/c1.png)
+![Captura de pantalla de la app.](screenshots/c2.png)
+![Captura de pantalla de la app.](screenshots/c3.png)
+![Captura de pantalla de la app.](screenshots/c4.png)
+![Captura de pantalla de la app.](screenshots/c5.png)
+![Captura de pantalla de la app.](screenshots/c6.png)
+![Captura de pantalla de la app.](screenshots/c7.png)
+![Captura de pantalla de la app.](screenshots/c8.png)
+![Captura de pantalla de la app.](screenshots/c9.png)
+
 ## What is it?
 
 This app deliver you the tools to create fanfics with visual elements, beautifying them. You can add images and play with styles to get a good theme and produce amazing results.
@@ -162,6 +178,16 @@ Run it in live-reloading mode (on every change) with this command:
 ```
 air
 ```
+
+## Distribution
+
+An **output** folder will be created when you execute the program. Rename it and compress it into a ZIP file to share with others. It should work well on most common desktop platforms.
+
+The web version checks paths/routes (in this code, paths reference the parent directory with '.'), but it's close to a Single Page Application (SPA).
+
+Before doing this, you should have worked on your TOML files (*main.toml*, *characters.toml*, *dialogue.toml*) in the **config** folder. Make sure you properly added the file paths in the **src** folder (images, fonts).
+
+You also need to change the favicon in the **src** folder. To see the new favicon, you might need to clear your browser's cache or try a different browser. Note that a private window may not always refresh the favicon, so it's normal to still see the old icon.
 
 ## Your feedback
 
