@@ -1,5 +1,11 @@
 # Visual Fanfic
 
+> ⚠️ **Please note: this project has moved to GitLab. You can find the latest version here:**
+> 
+> [Visual Fanfic](https://gitlab.com/eylulblossomgamesteam/visual-fanfic "https://gitlab.com/eylulblossomgamesteam/visual-fanfic")
+>
+> *Due to recent updates on GitHub, this project and all future projects will now be maintained on GitLab. Thanks for your understanding!*
+
 **An app to create content about your favorite work (game, anime, novel).**
 
 Visual Fanfic is with the fans. We support your efforts and devotion for the Games (and the Art in general).
